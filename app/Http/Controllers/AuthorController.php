@@ -10,6 +10,6 @@ class AuthorController extends Controller
     public function create(string $name)
     {
         Author::dispatch($name);
-        return "Done";
+        return "Done!";
     }
 }
