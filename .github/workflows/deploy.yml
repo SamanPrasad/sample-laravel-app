@@ -19,11 +19,12 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd /home/laravel_demo/sample-laravel-app
+            cd ${{ secrets.DEPLOY_PATH }}
             git fetch origin main
             git reset --hard origin/main
             git clean -fd
             composer install --no-dev --optimize-autoloader
+            npm install
             php artisan migrate --force
             php artisan config:cache
             php artisan route:cache
