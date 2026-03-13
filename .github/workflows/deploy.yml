@@ -20,7 +20,9 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/laravel_demo/sample-laravel-app
-            git pull origin main
+            git fetch origin main
+            git reset --hard origin/main
+            git clean -fd
             composer install --no-dev --optimize-autoloader
             php artisan migrate --force
             php artisan config:cache
