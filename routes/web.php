@@ -8,7 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/ec2', function () {
-    return "This is EC2";
+    return "This is EC2 Sample";
 });
 
 
