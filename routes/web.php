@@ -12,4 +12,4 @@ Route::get('/ec2', function () {
 });
 
 
-Route::get("/make-author/{name}", [AuthorController::class, 'create']);
+Route::get("/make-author/{name}/{type}", [AuthorController::class, 'create']);
