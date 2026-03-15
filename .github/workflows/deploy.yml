@@ -51,7 +51,6 @@ jobs:
             cd ${{ secrets.DEPLOY_PATH }}
             git fetch origin main
             git reset --hard origin/main
-            git clean -fd
             composer install --no-dev --optimize-autoloader
             php artisan migrate --force
             php artisan config:cache
