@@ -53,8 +53,7 @@ jobs:
             git reset --hard origin/main
             git clean -fd
             composer install --no-dev --optimize-autoloader
-            rm -rf node_modules
-            rm -rf package-lock.json
+            rm -rf package.json
             php artisan migrate --force
             php artisan config:cache
             php artisan route:cache
